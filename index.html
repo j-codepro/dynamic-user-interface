@@ -5,11 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="main.js" defer ></script>
 </head>
 <body>
-    <div id="content"></div>
+    <div id="content">
+        <header class="header">
+            <!-- MENU MODliE -->
+            <div class="container">
+                <div class="header-main">
+                    <div class="logo">
+                        <a href="#">Logo</a>
+                    </div>
+                    <div class="open-nav-menu">
+                        <span></span>
+                    </div>
+                    <div class="nav-menu">
+                        <div class="close-nav-menu">
+                            <img src="img/close.svg" alt="close" class="filter">
+                        </div>
+                        <ul class="menu">
+                            <li class="menu-item">
+                                <a href="#">Home</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">About</a>
+                            </li>
+                            <li class="menu-item menu-item-has-children">
+                                <a href="#">Services <i class="plus"></i></a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="#">Service 1</a></li>
+                                    <li class="menu-item"><a href="#">Service 2</a></li>
+                                    <li class="menu-item"><a href="#">Service 3</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-has-children">
+                                <a href="#">Pages <i class="plus"></i></a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="#">Page 1</a></li>
+                                    <li class="menu-item"><a href="#">Page 2</a></li>
+                                    <li class="menu-item"><a href="#">Page 3</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">News</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
 </body>
 </html>
