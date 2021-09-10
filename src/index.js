@@ -1,3 +1,3 @@
-import openCloseMenu from './modules/menu';
+import manageMenu from './modules/menu';
 
-openCloseMenu();
+manageMenu();
