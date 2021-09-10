@@ -12,6 +12,10 @@
     font-weight: 400;
 }
 
+#content.hiden-scrolling {
+    overflow-y: hidden;
+}
+
 a {
     text-decoration: none;
 }
@@ -44,7 +48,7 @@ ul {
     background-color: white;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px 10px;
     border-radius: 4px;
 }
 
@@ -109,6 +113,10 @@ ul {
         visibility: visible;
         opacity: 1;
     }
+
+    .header .menu > .menu-item-has-children:hover > a .plus:after {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
 }
 
 .header .sub-menu > .menu-item > a {
@@ -126,6 +134,7 @@ ul {
     width: 12px;
     position: relative;
     margin-left: 5px;
+    pointer-events: none;
 }
 
 .header .menu > .menu-item > a .plus::before,
@@ -149,10 +158,6 @@ ul {
 .header .menu > .menu-item:hover > a .plus::before,
 .header .menu > .menu-item:hover > a .plus::after {
     background-color: #336699;
-}
-
-.header .menu > .menu-item-has-children:hover > a .plus:after {
-    transform: translate(-50%, -50%) rotate(0deg);
 }
 
 .header .open-nav-menu {
@@ -207,6 +212,24 @@ ul {
     width: 16px;
 }
 
+.header .menu-overlay {
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.3);
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.header .menu-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
 .filter {
     filter: invert(15%) sepia(90%) saturate(1922%) hue-rotate(187deg)
         brightness(75%) contrast(110%);
@@ -217,19 +240,18 @@ ul {
 @media (max-width: 992px) {
     .header .nav-menu {
         position: fixed;
-        visibility: hidden;
         right: -280px;
         top: 0;
-        width: 280px;
+        width: 250px;
         height: 100%;
         overflow-y: auto;
         background-color: #ffcc66;
         z-index: 20;
         padding: 15px 0;
-        transition: all 0.5s ease;
+        transition: all 0.3s ease;
     }
 
-    .header .nav-menu-open {
+    .header .nav-menu.open {
         visibility: visible;
         right: 0;
     }
@@ -253,6 +275,10 @@ ul {
     .header .menu > .menu-item > a .plus::before,
     .header .menu > .menu-item > a .plus::after {
         background-color: #003366;
+    }
+
+    .header .menu > .menu-item-has-children.active > a .plus:after {
+        transform: translate(-50%, -50%) rotate(0deg);
     }
 
     .header .menu > .menu-item > .sub-menu {
